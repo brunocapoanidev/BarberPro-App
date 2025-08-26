@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberPro</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/template.css">
+</head>
+
+<body>
+    <div class="container-principal">
+
+        <div class="cellphone">
+            <div class="tela">
+                <header id="header-tela">
+                    <h1>Barber<span>Pro</span></h1>
+                </header>
+
+
+
+                <!-- 1ª Etapa: escolha do barbeiro -->
+                <div class="Barbeiros"">
+                    <p>Escolha o barbeiro:</p>
+                    <ul>
+                        <li class="barbeiro" id="joao">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Barbeiro João">
+                            <p>João</p>
+                        </li>
+                        <li class="barbeiro" id="maria">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Barbeira Maria">
+                            <p>Maria</p>
+                        </li>
+                        <li class="barbeiro" id="carlos">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Barbeiro Carlos">
+                            <p>Carlos</p>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="Cortes" style="display: none;">
+                    <p>Escolha o serviço:</p>
+                    <ul>
+                        <li class="corte" id="barba">
+                            <p>Social + Barba</p>
+                        </li>
+                        <li class="corte" id="sobrancelha">
+                            <p>Social</p>
+                        </li>
+                        <li class="corte" id="social">
+                            <p>Degrade</p>
+                        </li>
+                        <li class="corte" id="fade">
+                            <p>Barba</p>
+                        </li>
+                        <li class="corte" id="degrade">
+                            <p>fade</p>
+                        </li>
+                        <li class="corte" id="moicano">
+                            <p>fade + barba</p>
+                        </li>
+                        <li class="corte" id="combo">
+                            <p>sobrancelhas</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2ª Etapa: escolha do dia -->
+                <div class="DiaAgendamento" style="display: none;">
+                    <p>Escolha o dia da semana:</p>
+                    <ul>
+                        <li class="days" id="segunda">
+                            <p>Segunda-feira</p>
+                        </li>
+                        <li class="days" id="terça">
+                            <p>Terça-feira</p>
+                        </li>
+                        <li class="days" id="quarta">
+                            <p>Quarta-feira</p>
+                        </li>
+                        <li class="days" id="quinta">
+                            <p>Quinta-feira</p>
+                        </li>
+                        <li class="days" id="sexta">
+                            <p>Sexta-feira</p>
+                        </li>
+                        <li class="days" id="sabado">
+                            <p>Sábado</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 3ª Etapa: escolha do horário -->
+                <div class="horarios" style="display: none;">
+                    <p>Escolha o horário:</p>
+                    <ul>
+                        <li class="horario" id="09:00">
+                            <p>09:00</p>
+                        </li>
+                        <li class="horario">
+                            <p>10:00</p>
+                        </li>
+                        <li class="horario">
+                            <p>11:00</p>
+                        </li>
+                        <li class="horario">
+                            <p>13:00</p>
+                        </li>
+                        <li class="horario">
+                            <p>14:00</p>
+                        </li>
+                        <li class="horario">
+                            <p>15:00</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 4ª Etapa: confirmação -->
+                <div class="nomes" style="display: none;">
+                    <p>Confirme o horário escolhido:</p>
+                    <ul>
+                        <li class="nome">
+                            <p>09:00</p>
+                        </li>
+                        <li class="nome">
+                            <p>10:00</p>
+                        </li>
+                        <li class="nome">
+                            <p>11:00</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../assets/js/DiaAgendamento.js"></script>
+</body>
+
+</html>

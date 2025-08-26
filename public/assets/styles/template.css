@@ -1,0 +1,233 @@
+/* -------------------- Reset / Global -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------- Body / Layout Principal -------------------- */
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+
+    background-image: url('/images/madeira.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+/* -------------------- Container Principal -------------------- */
+.container-principal {
+    display: flex;
+    justify-content: center; 
+    align-items: center;       
+    width: 100%;                    
+}
+
+/* -------------------- Cellphone -------------------- */
+.cellphone {
+    width: 23rem;
+    height: 40rem;
+    border-radius: 2.5rem;
+    border: 0.7rem solid #111;
+    background: linear-gradient(135deg, #2c2c2c, #121212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 
+                0 0 0 0.2rem #222 inset;
+}
+
+/* Topo do celular (câmera / sensor) */
+.cellphone::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 0.5rem;
+    background-color: #333;
+    border-radius: 0.25rem;
+}
+
+/* Botão home / base do celular */
+.cellphone::after {
+    content: "";
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 0.4rem;
+    background-color: #222;
+    border-radius: 0.2rem;
+}
+
+/* -------------------- Tela do Celular -------------------- */
+.tela {
+    border-radius: 0 0 1.4rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.tela h1,
+.tela h2,
+.tela p {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* -------------------- Header Tela -------------------- */
+#header-tela h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+#header-tela p {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 800;
+}
+
+/* -------------------- Span -------------------- */
+span {
+    color: orange;
+}
+
+/* -------------------- Barbeiros -------------------- */
+.Barbeiros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+.Barbeiros ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.Barbeiros li.barbeiro {
+    width: 8rem;
+    height: 10rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    text-align: center;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Barbeiros li.barbeiro:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
+    border: 1px solid rgba(255, 165, 0, 0.6);
+}
+
+.Barbeiros li.barbeiro img {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.6rem;
+    border: 2.5px solid orange;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.Barbeiros li.barbeiro:hover img {
+    border-color: #ffb84d;
+    box-shadow: 0 0 18px rgba(255, 184, 77, 0.8);
+    transform: scale(1.08);
+}
+
+.Barbeiros li.barbeiro p {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.5px;
+}
+
+/* -------------------- Dia Agendamento -------------------- */
+.DiaAgendamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+/* -------------------- Listas Gerais -------------------- */
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+ul li {
+    width: 11rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+ul li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 3px 6px rgba(255, 165, 0, 0.4);
+    border: 1px solid rgba(255, 165, 0, 0.6);
+}
+
+ul li p {
+    color: rgb(216, 202, 202);
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+    text-align: center;
+    margin: auto;
+    padding: 7.5px;
+}
+
+p{
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
