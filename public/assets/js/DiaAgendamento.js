@@ -1,18 +1,19 @@
-const Barbeiros = document.querySelectorAll(".Barbeiros")
-const Cortes = document.querySelectorAll("corte")
+const Barbeiros = document.querySelectorAll(".barbeiro");
+const Cortes = document.querySelectorAll(".corte");
 const Days = document.querySelectorAll(".days");
-const Horarios = document.querySelectorAll(".horarios")
-const nome = document.querySelectorAll(".nome")
+const Horarios = document.querySelectorAll(".horario"); 
 
-//containers dos elementos
+// Containers
+const ContainerBarbeiros = document.querySelector(".Barbeiros");
+const ContainerCortes = document.querySelector(".Cortes");
+const ContainerDays = document.querySelector(".DiaAgendamento");
+const ContainerHorarios = document.querySelector(".horarios");
 
-const ContainerBarbeiros = document.querySelector(".Barbeiros")
-const ContainerCortes = document.querySelector(".Cortes")
-const ContainerDays = document.querySelector(".DiaAgendamento")
-const ContainerHorarios = document.querySelector(".horarios")
-const ContainerNome = document.querySelector(".nomes")
-const dados = []
 
+
+
+
+//Funcao para mostrar display
 function toggleDisplay(show, hide) {
     if (hide) hide.style.display = "none";
     if (show) show.style.display = "block";
@@ -20,7 +21,7 @@ function toggleDisplay(show, hide) {
 
 Barbeiros.forEach((barbers) =>{
     barbers.addEventListener("click" , ()=>{
-         const Barber = barbers.textContent
+        const Barber = barbers.textContent
         dados.push(Barber)
         toggleDisplay(ContainerCortes, ContainerBarbeiros);
    
@@ -46,14 +47,7 @@ Days.forEach((day) => {
     })
 })
 
-Horarios.forEach((hours) => {
-    hours.addEventListener("click", () => {
-         const ValueHours = hours.textContent
-        dados.push(ValueHours)
-        toggleDisplay(ContainerNome, ContainerHorarios);
-        
-    })
-})
+
 
 
 
