@@ -20,7 +20,7 @@
                 <div class="Barbeiros">
                     <p>Escolha o barbeiro:</p>
                     <ul>
-                        <li class="barbeiro" id="joao"> <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                        <li class="barbeiro" id="Bruno"> <img src="https://randomuser.me/api/portraits/men/32.jpg"
                                 alt="Barbeiro João">
                             <p>João</p>
                         </li>
@@ -80,7 +80,7 @@
                         </li>
                     </ul>
                 </div> <!-- 4ª Etapa: escolha do horário -->
-                <div class="horarios" style="display: none;">
+                <div class="Horarios" style="display: none;">
                     <p>Escolha o horário:</p>
                     <ul>
                         <li class="horario" id="09:00">
@@ -105,4 +105,17 @@
                 </div> <!-- 5ª Etapa: confirmação -->
                 <div class="nomes" style="display: none;">
                     <p>Confirme o horário escolhido:</p>
-                    <ul>
+                    <ul> <li class="confirmacao">
+                            <p id="resumo-agendamento"></p>
+                        </li>
+                    </ul>
+                    <button id="confirmar-agendamento">Confirmar</button>
+                    <button id="cancelar-agendamento">Cancelar</button>
+                </div>
+            </div> <!-- fim da tela -->
+        </div> <!-- fim da cellphone -->
+    </div> <!-- fim do container-principal -->
+</body>
+
+<script type="module" src="../assets/js/DiaAgendamento.js"></script>
+</html>

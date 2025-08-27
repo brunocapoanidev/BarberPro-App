@@ -7,8 +7,8 @@ const Horarios = document.querySelectorAll(".horario");
 const ContainerBarbeiros = document.querySelector(".Barbeiros");
 const ContainerCortes = document.querySelector(".Cortes");
 const ContainerDays = document.querySelector(".DiaAgendamento");
-const ContainerHorarios = document.querySelector(".horarios");
-
+const ContainerHorarios = document.querySelector(".Horarios");
+const dados = []
 
 
 
