@@ -101,21 +101,30 @@
                         <li class="horario">
                             <p>15:00</p>
                         </li>
-                    </ul>
-                </div> <!-- 5ª Etapa: confirmação -->
-                <div class="nomes" style="display: none;">
-                    <p>Confirme o horário escolhido:</p>
-                    <ul> <li class="confirmacao">
-                            <p id="resumo-agendamento"></p>
+                        <li class="horario">
+                            <p>16:00</p>
+                        </li>
+                        <li class="horario">
+                            <p>17:00</p>
                         </li>
                     </ul>
-                    <button id="confirmar-agendamento">Confirmar</button>
-                    <button id="cancelar-agendamento">Cancelar</button>
+                </div> <!-- 5ª Etapa: Nome e Telefone-->
+                <div class="NomeTelefone" style="display: none;">
+                    <form class="CamposForms">
+                        <label for="">Nome:</label>
+                        <input type="text" id="NameField" class="Campos">
+                        <label for="">Telefone:</label>
+                        <input type="tel" id="NumberField" class="Campos">
+                        <button type="text" class="btnEnviar">Agendar</button>
+                    </form>
+
+
                 </div>
-            </div> <!-- fim da tela -->
-        </div> <!-- fim da cellphone -->
-    </div> <!-- fim do container-principal -->
+            </div>
+        </div>
+    </div>
 </body>
 
 <script type="module" src="../assets/js/DiaAgendamento.js"></script>
+
 </html>
