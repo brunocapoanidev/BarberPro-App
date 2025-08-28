@@ -8,62 +8,61 @@ const ContainerBarbeiros = document.querySelector(".Barbeiros");
 const ContainerCortes = document.querySelector(".Cortes");
 const ContainerDays = document.querySelector(".DiaAgendamento");
 const ContainerHorarios = document.querySelector(".Horarios");
-const ContainerNomeTelefone = document.querySelector(".NomeTelefone")
+const ContainerNomeTelefone = document.querySelector(".NomeTelefone");
 
-const CampoNome = document.querySelector("#NameField")
-const CampoTelefone = document.querySelector("#NumberField")
-const BotaoAgendamento = document.querySelector(".btnEnviar")
-const dados = []
+const CampoNome = document.querySelector("#NameField");
+const CampoTelefone = document.querySelector("#NumberField");
+const BotaoAgendamento = document.querySelector(".btnEnviar");
 
-//Funcao para mostrar display
+// Objeto que vai guardar os dados
+const agendamento = {};
+
+// Função para mostrar display
 function toggleDisplay(show, hide) {
     if (hide) hide.style.display = "none";
     if (show) show.style.display = "block";
 }
 
-const fluxoAgendamento = (elementos, containerAtual, containerProximo) => {
+// Função para fluxo de agendamento
+const fluxoAgendamento = (elementos, containerAtual, containerProximo, chave) => {
     elementos.forEach((el) => {
         el.addEventListener("click", () => {
-            const valor = el.textContent.trim()
-            dados.push(valor)
-            toggleDisplay(containerProximo, containerAtual)
-        })
-    })
+            const valor = el.textContent.trim();
+            agendamento[chave] = valor; // salva no objeto pelo nome da chave
+            toggleDisplay(containerProximo, containerAtual);
+        });
+    });
 }
 
-fluxoAgendamento(Barbeiros, ContainerBarbeiros, ContainerCortes)
-fluxoAgendamento(Cortes, ContainerCortes, ContainerDays)
-fluxoAgendamento(Days, ContainerDays, ContainerHorarios)
-fluxoAgendamento(Horarios, ContainerHorarios, ContainerNomeTelefone)
+// Fluxo usando objetos
+fluxoAgendamento(Barbeiros, ContainerBarbeiros, ContainerCortes, "barbeiro");
+fluxoAgendamento(Cortes, ContainerCortes, ContainerDays, "corte");
+fluxoAgendamento(Days, ContainerDays, ContainerHorarios, "dia");
+fluxoAgendamento(Horarios, ContainerHorarios, ContainerNomeTelefone, "horario");
 
+// Função para enviar dados pro backend
 async function dadosDoAgendamento() {
-
-    const NameCliente = CampoNome.value
-    const TelefoneCliente = CampoTelefone.value
-    dados.push({ Nome: NameCliente, Telefone: TelefoneCliente })
-
+    // adiciona nome e telefone ao objeto
+    agendamento.nome = CampoNome.value;
+    agendamento.telefone = CampoTelefone.value;
 
     try {
         const resposta = await fetch('/dados', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify()
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(agendamento) // envia objeto JSON
         });
 
         const data = await resposta.json();
-        alert("Agendamento: " + data.dia + data.hora);
+        alert(JSON.stringify(data)); // mostra a resposta de forma legível
 
     } catch (error) {
         console.error("Erro no fetch:", error);
     }
 }
 
-
-BotaoAgendamento.addEventListener("click", async () => {
-    dadosDoAgendamento()
-
-    console.log(dados)
-})
-
+// Botão de envio
+BotaoAgendamento.addEventListener("click", async (event) => {
+    event.preventDefault(); // impede reload/redirect
+    dadosDoAgendamento();
+});
