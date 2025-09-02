@@ -1,18 +1,23 @@
+import { buscarAgendametos } from "./BuscarAgendametos.js";
+
 const Barbeiros = document.querySelectorAll(".barbeiro");
 const Cortes = document.querySelectorAll(".corte");
 const Days = document.querySelectorAll(".days");
 const Horarios = document.querySelectorAll(".horario");
-
 
 const ContainerBarbeiros = document.querySelector(".Barbeiros");
 const ContainerCortes = document.querySelector(".Cortes");
 const ContainerDays = document.querySelector(".DiaAgendamento");
 const ContainerHorarios = document.querySelector(".Horarios");
 const ContainerNomeTelefone = document.querySelector(".NomeTelefone");
+const Agradecimento = document.querySelector("#Agradecimento")
 
 const CampoNome = document.querySelector("#NameField");
 const CampoTelefone = document.querySelector("#NumberField");
 const BotaoAgendamento = document.querySelector(".btnEnviar");
+const BotaoVoltar = document.querySelector("#Botao-Voltar")
+
+
 
 const agendamento = {};
 
@@ -38,9 +43,8 @@ fluxoAgendamento(Cortes, ContainerCortes, ContainerDays, "corte");
 fluxoAgendamento(Days, ContainerDays, ContainerHorarios, "dia");
 fluxoAgendamento(Horarios, ContainerHorarios, ContainerNomeTelefone, "horario");
 
-
+//Enviar Agendamentos
 async function dadosDoAgendamento() {
-
     agendamento.nome = CampoNome.value;
     agendamento.telefone = CampoTelefone.value;
 
@@ -52,32 +56,34 @@ async function dadosDoAgendamento() {
         });
 
         const data = await resposta.json();
-        alert(JSON.stringify(data));
+
+        if (resposta.ok) {
+            buscarAgendametos();
+            toggleDisplay(Agradecimento, ContainerNomeTelefone)
+        } else {
+            alert(data.mensagem || "Erro no agendamento"); // mostra msg de erro
+        }
+
+
+
 
     } catch (error) {
         console.error("Erro no fetch:", error);
     }
+
+
 }
 
+BotaoVoltar.addEventListener("click", () => {
+    toggleDisplay(ContainerBarbeiros, Agradecimento)
+})
 
 BotaoAgendamento.addEventListener("click", async (event) => {
     event.preventDefault();
     dadosDoAgendamento();
+
+    
 });
 
-async function pegarAgendamentos() {
-    const resposta = await fetch('/Agendamentosalvos');
-    const data = await resposta.json();
 
-    const container = document.getElementById("agendamentos");
-    container.innerHTML = ""; // limpa antes
 
-    data.forEach(agendamento => {
-        const item = document.createElement("p");
-        item.textContent = `${agendamento.nome} - ${agendamento.horario}`;
-        container.appendChild(item);
-    });
-}
-
-// ⚡ Se não tiver isso, nada acontece
-pegarAgendamentos();

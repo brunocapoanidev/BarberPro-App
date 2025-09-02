@@ -1,13 +1,11 @@
 const express = require("express");
 const app = express();
-const PORT = 14000;
+const PORT = 22000;
 app.use(express.static("public"));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
-const agendamentos = []
-
+const agendamentosData = []
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/template.html");
 });
@@ -15,25 +13,26 @@ app.get("/", (req, res) => {
 app.post("/dados", (req, res) => {
     const agendamento = req.body;
 
-    if (!agendamento.nome || !agendamento.telefone || typeof agendamento.nome !== 'string') {
-        return res.json({ mensagem: "Dados inválidos" });
-    }
+   if (
+    !agendamento.nome || 
+    !agendamento.telefone || 
+    typeof agendamento.nome !== "string" || 
+    agendamento.nome.trim().length < 3 ||   
+    !/^\d{8,15}$/.test(agendamento.telefone) 
+) {
+    return res.status(400).json({ mensagem: "Dados inválidos" });
+}
 
-    agendamentos.push(agendamento)
-    res.json({ mensagem: "Agendamento confirmado!", agendamento });
+
+    agendamentosData.push(agendamento)
+    res.status(200).json({mensagem: "Agendamento confirmado!", agendamento });
 });
 
 
-app.get("/agendamentos", (req, res) => {
-    res.json(agendamentos); // devolve todos os agendamentos
-});
 
 app.get("/Agendamentosalvos", (req, res) => {
-
-    res.sendFile(__dirname + "/views/Agendamentos.html");
-
+    res.json(agendamentosData) 
 })
-
 
 
 app.listen(PORT, () => {
