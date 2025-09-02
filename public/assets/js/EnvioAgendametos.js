@@ -43,7 +43,7 @@ fluxoAgendamento(Cortes, ContainerCortes, ContainerDays, "corte");
 fluxoAgendamento(Days, ContainerDays, ContainerHorarios, "dia");
 fluxoAgendamento(Horarios, ContainerHorarios, ContainerNomeTelefone, "horario");
 
-//Enviar Agendamentos
+//Enviar   Agendamentos
 async function dadosDoAgendamento() {
     agendamento.nome = CampoNome.value;
     agendamento.telefone = CampoTelefone.value;
@@ -82,7 +82,7 @@ BotaoAgendamento.addEventListener("click", async (event) => {
     event.preventDefault();
     dadosDoAgendamento();
 
-    
+
 });
 
 
