@@ -47,7 +47,7 @@ export async function buscarAgendametos() {
         tr.appendChild(Tdhorario);
         tr.appendChild(Tdnome);
         tr.appendChild(Tdtelefone);
-        tr.appendChild(TdDelete); 
+        tr.appendChild(TdDelete);
 
         Tdata.prepend(tr);
     });
