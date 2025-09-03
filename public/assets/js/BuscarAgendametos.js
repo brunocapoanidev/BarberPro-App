@@ -38,7 +38,6 @@ export async function buscarAgendametos() {
         const Tdtelefone = document.createElement("td");
         Tdtelefone.textContent = element.telefone;
 
-        // Criar TD pro botão de delete
         const TdDelete = document.createElement("td");
         TdDelete.appendChild(botaoDelete(element.telefone));
 
@@ -48,7 +47,7 @@ export async function buscarAgendametos() {
         tr.appendChild(Tdhorario);
         tr.appendChild(Tdnome);
         tr.appendChild(Tdtelefone);
-        tr.appendChild(TdDelete); // botão dentro de TD
+        tr.appendChild(TdDelete); 
 
         Tdata.prepend(tr);
     });

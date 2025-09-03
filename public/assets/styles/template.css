@@ -191,36 +191,29 @@ span {
 }
 
 .Barbeiros ul {
-
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; /* um embaixo do outro */
     gap: 1.5rem;
     list-style: none;
+    padding: 0;
 }
 
 .Barbeiros li.barbeiro {
-    width: 8rem;
-    height: 10rem;
+    width: 20rem; /* aumenta pra caber a imagem + texto */
+    height: auto; /* altura automática */
     background: rgba(255, 255, 255, 0.08);
     border-radius: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* flex pro conteúdo ficar lado a lado */
+    flex-direction: row; /* imagem e texto na horizontal */
+    align-items: center; /* alinha verticalmente */
+    justify-content: flex-start; /* começa da esquerda */
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     cursor: pointer;
     transition: all 0.35s ease;
-    text-align: center;
     padding: 0.8rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.Barbeiros li.barbeiro:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
-    border: 1px solid rgba(255, 165, 0, 0.6);
+    text-align: left; /* texto alinhado à esquerda */
 }
 
 .Barbeiros li.barbeiro img {
@@ -228,27 +221,25 @@ span {
     height: 4.8rem;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 0.6rem;
+    margin-right: rem; /* espaço entre a imagem e o texto */
     border: 2.5px solid orange;
     box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
     transition: all 0.3s ease;
 }
 
-.Barbeiros li.barbeiro:hover img {
-    border-color: #ffb84d;
-    box-shadow: 0 0 18px rgba(255, 184, 77, 0.8);
-    transform: scale(1.08);
-}
-
 .Barbeiros li.barbeiro p {
-    color: #fff;
-    font-size: 1.05rem;
+    color: #ffffff;
+    font-size: 1.2rem;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
+    margin: 5;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     letter-spacing: 0.5px;
+    position: relative;
+    right: 2rem;
+    top: 0rem;
 }
+
 
 /* -------------------- Dia Agendamento -------------------- */
 .DiaAgendamento {
