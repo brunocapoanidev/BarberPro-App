@@ -192,28 +192,36 @@ span {
 
 .Barbeiros ul {
     display: flex;
-    flex-direction: column; /* um embaixo do outro */
+    flex-direction: column;
+    /* um embaixo do outro */
     gap: 1.5rem;
     list-style: none;
     padding: 0;
 }
 
 .Barbeiros li.barbeiro {
-    width: 20rem; /* aumenta pra caber a imagem + texto */
-    height: auto; /* altura automática */
+    width: 20rem;
+    /* aumenta pra caber a imagem + texto */
+    height: auto;
+    /* altura automática */
     background: rgba(255, 255, 255, 0.08);
     border-radius: 1.2rem;
-    display: flex; /* flex pro conteúdo ficar lado a lado */
-    flex-direction: row; /* imagem e texto na horizontal */
-    align-items: center; /* alinha verticalmente */
-    justify-content: flex-start; /* começa da esquerda */
+    display: flex;
+    /* flex pro conteúdo ficar lado a lado */
+    flex-direction: row;
+    /* imagem e texto na horizontal */
+    align-items: center;
+    /* alinha verticalmente */
+    justify-content: flex-start;
+    /* começa da esquerda */
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     cursor: pointer;
     transition: all 0.35s ease;
     padding: 0.8rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left; /* texto alinhado à esquerda */
+    text-align: left;
+    /* texto alinhado à esquerda */
 }
 
 .Barbeiros li.barbeiro img {
@@ -221,7 +229,8 @@ span {
     height: 4.8rem;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: rem; /* espaço entre a imagem e o texto */
+    margin-right: rem;
+    /* espaço entre a imagem e o texto */
     border: 2.5px solid orange;
     box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
     transition: all 0.3s ease;
