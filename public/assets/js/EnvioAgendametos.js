@@ -58,6 +58,8 @@ async function dadosDoAgendamento() {
         const data = await resposta.json();
 
         if (resposta.ok) {
+            CampoNome.value = ''
+            CampoTelefone.value = ''
             buscarAgendametos();
             toggleDisplay(Agradecimento, ContainerNomeTelefone)
         } else {
