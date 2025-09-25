@@ -81,6 +81,8 @@ BotaoVoltar.addEventListener("click", () => {
 BotaoAgendamento.addEventListener("click", async (event) => {
     event.preventDefault();
     dadosDoAgendamento();
+    CampoNome.value = ""
+    CampoTelefone.value = ""
 
 
 });
